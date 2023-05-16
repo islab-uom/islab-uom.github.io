@@ -1,11 +1,11 @@
 ---
 ---
-<h1>Bibliography</h1>
+{{ reference }}
 
-<ul>
-  {% for file in site.static_files %}
-    {% if file.extname == '.bib' %}
-      <li>{{ file.path }}</li>
-    {% endif %}
-  {% endfor %}
-</ul>
+
+{% if entry.doi %}
+<p>
+  DOI: <a href="https://doi.org/{{ entry.doi }}">{{ entry.doi }}</a>
+</p>
+{% endif %}
+<a href="/path/to/bib/file.bib" download><button>Download BibTeX</button></a>
